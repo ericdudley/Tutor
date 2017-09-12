@@ -3,7 +3,9 @@
 
 <div class="pure-g">
     <?php
-    include "classes/User.php";
+    spl_autoload_register(function ($class) {
+        @require_once($class . '.php');
+    });
 
     $db = SQLiteConnection::connect();
     if ($db != null) {
@@ -19,10 +21,10 @@
     }
     ?>
     <div class="pure-u-1 pure-u-lg-1-5">
-        <a class="pure-button pure-button-primary" href="pages/question-form.php">Ask for Help</a>
+        <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
     </div>
     <div class="pure-u-1 pure-u-lg-4-5">
-        <?php include "actions/question-list.php"; ?>
+        <?php include "question-list.php"; ?>
     </div>
 </div>
 

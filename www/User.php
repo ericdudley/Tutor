@@ -6,8 +6,6 @@
  * Time: 7:36 PM
  */
 
-include "SQLiteConnection.php";
-
 class User
 {
     public $username;

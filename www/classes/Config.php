@@ -7,7 +7,7 @@
  */
 
 class Config {
-    const PATH_TO_SQLITE_FILE = 'main.sqlite3';
+    const PATH_TO_SQLITE_FILE = '../main.sqlite3';
     const CREATE_TABLE_STRINGS = [
         "DROP TABLE IF EXISTS Question;",
         "DROP TABLE IF EXISTS User;",

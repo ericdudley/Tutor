@@ -34,7 +34,7 @@
     }
     ?>
     <div class="pure-u-1 pure-u-lg-1-5">
-        <a class="pure-button pure-button-primary" href="/pages/question-form.php">Ask for Help</a>
+        <a class="pure-button pure-button-primary" href="pages/question-form.php">Ask for Help</a>
     </div>
     <div class="pure-u-1 pure-u-lg-4-5">
         <?php include "actions/question-list.php"; ?>

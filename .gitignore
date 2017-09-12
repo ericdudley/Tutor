@@ -21,6 +21,8 @@
 
 .idea/**/*.xml
 
+*.iml
+
 # CMake
 cmake-build-debug/
 

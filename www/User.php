@@ -35,6 +35,8 @@ VALUES (:username, :name, :isTutor);";
             $stmt->bindParam(':name', $name, PDO::PARAM_STR);
             $stmt->bindParam(':isTutor', $isTutor, PDO::PARAM_STR);
             $stmt->execute();
+
+            return new User($username, $name, $isTutor);
         }
         return null;
     }

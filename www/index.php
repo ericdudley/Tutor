@@ -3,10 +3,6 @@
 
 <div class="pure-g">
     <?php
-    spl_autoload_register(function ($class) {
-        @require_once($class . '.php');
-    });
-
     $db = SQLiteConnection::connect();
     if ($db != null) {
         foreach(Config::CREATE_TABLE_STRINGS as $str) {

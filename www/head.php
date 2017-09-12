@@ -20,3 +20,8 @@
     <link rel="stylesheet"
           href="assets/css/main.css">
 </head>
+<?php
+spl_autoload_register(function ($class) {
+    @require_once($class . '.php');
+});
+?>

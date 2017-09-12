@@ -16,10 +16,10 @@
             $_SERVER['givenName']." ".$_SERVER['sn'], "1");
     }
     ?>
-    <div class="pure-u-1 pure-u-lg-1-5">
+    <div class="pure-u-1">
         <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
     </div>
-    <div class="pure-u-1 pure-u-lg-4-5">
+    <div class="pure-u-1">
         <?php include "question-list.php"; ?>
     </div>
 </div>

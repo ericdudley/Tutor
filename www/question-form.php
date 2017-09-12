@@ -10,7 +10,8 @@
 
                 <div class="pure-control-group">
                     <label for="class">Class</label>
-                    <select id="class" name="clss">
+                    <select id="class" name="clss" required>
+                        <option value="">Select...</option>
                         <option>CS1</option>
                         <option>CS2</option>
                         <option>MOPS</option>
@@ -24,12 +25,12 @@
 
                 <div class="pure-control-group">
                     <label for="assignment">Assignment</label>
-                    <input class="pure-input-rounded" id="assignment" type="text" placeholder="Hw 1, Lab 1..." name="assn">
+                    <input class="pure-input-rounded" id="assignment" type="text" placeholder="Hw 1, Lab 1..." name="assn" required>
                 </div>
 
                 <div class="pure-control-group">
                     <label for="question">Question</label>
-                    <input class="pure-input-rounded" id="question" type="text" placeholder="Question" name="qtext">
+                    <input class="pure-input-rounded" id="question" type="text" placeholder="Question" name="qtext" required>
                 </div>
 
                 <input class="pure-button pure-button-primary" type="submit" value="Submit">

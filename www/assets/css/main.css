@@ -13,6 +13,11 @@ ul, ol {
     padding-left:0;
 }
 
+ul{
+    width: 200px;
+    margin: 0 auto !important;
+}
+
 .pure-g
 {
     text-align: center;

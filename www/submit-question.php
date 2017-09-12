@@ -6,7 +6,7 @@ if($_SERVER['uid'] == null){
 $question = Question::create($_SERVER['uid'], $_POST['clss'], $_POST['assn'], $_POST['qtext']);
 if($question != null){
     echo '<script type="text/javascript">
-           window.location = "../"
+           window.location = "."
       </script>';
 }
 else{

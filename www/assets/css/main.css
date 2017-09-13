@@ -35,3 +35,11 @@ form
     margin-bottom: 20px;
     color: white;
 }
+
+.delete-question
+{
+    color: red;
+    position: absolute;
+    top: 0;
+    left: 200px;
+}

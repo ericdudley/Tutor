@@ -23,7 +23,9 @@
 <body>
 <div id="logo-wrapper" class="pure-g">
     <div class="pure-u-1-2 pure-u-md-1-5">
-        <img src="assets/img/cs_logo.png" id="logo">
+        <a href="index.php">
+            <img src="assets/img/cs_logo.png" id="logo">
+        </a>
     </div>
     <h1 class="pure-u-1-2 pure-u-md-4-5">Tutoring Center</h1>
 </div>
@@ -31,4 +33,9 @@
 spl_autoload_register(function ($class) {
     @require_once($class . '.php');
 });
+if($_SERVER['uid'] == null){
+    $_SERVER['uid'] = "erd5693";
+    $_SERVER['givenName'] = "Eric";
+    $_SERVER['sn'] = "Dudley";
+}
 ?>

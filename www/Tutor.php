@@ -37,4 +37,18 @@ VALUES (:username, :name);";
         }
         return null;
     }
+
+    public static function verify($username){
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $sql = 'SELECT * FROM Tutor WHERE username LIKE :username LIMIT 1';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($row != null){return true;}
+
+        }
+        return false;
+    }
 }

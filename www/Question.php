@@ -50,6 +50,19 @@ VALUES (:username, :name, :clss, :assn, :qtext);";
         return null;
     }
 
+    public static function delete($id)
+    {
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $sql = "DELETE FROM Question WHERE id=:id;";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+            $stmt->execute();
+            return true;
+        }
+        return false;
+    }
+
     public static function getAll()
     {
         $db = SQLiteConnection::connect();

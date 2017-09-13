@@ -1,3 +1,14 @@
+<?php
+spl_autoload_register(function ($class) {
+    @require_once($class . '.php');
+});
+if($_SERVER['uid'] == null){
+    $_SERVER['uid'] = "tst1234";
+    $_SERVER['givenName'] = "Bobby";
+    $_SERVER['sn'] = "Haskell";
+    $_SERVER['ritEduAffiliation'] = "UGAFF;UGAFFSTD;StudentWorker;STDAFFIL;Student;ResidentMain";
+}
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -22,21 +33,27 @@
 </head>
 <body>
 <div id="logo-wrapper" class="pure-g">
-    <div class="pure-u-1-2 pure-u-md-1-5">
+    <div class="pure-u-1-2 pure-u-md-1-4">
         <a href="index.php">
             <img src="assets/img/cs_logo.png" id="logo">
         </a>
     </div>
-    <h1 class="pure-u-1-2 pure-u-md-4-5">Tutoring Center</h1>
+    <h1 class="pure-u-1-2 pure-u-md-1-4">Tutoring Center</h1>
+    <?php
+    if(Tutor::verify($_SERVER['uid'])) {
+    echo '<div class="pure-u-1-2 pure-u-md-1-4 head-button">';
+        if (Tutor::isActive($_SERVER['uid'])) {
+        echo "<a class='pure-button' href='clock-out.php?username={$_SERVER['uid']}'>Clock out</a>";
+        }
+        else{
+        echo "<a class='pure-button' href='clock-in.php?username={$_SERVER['uid']}'>Clock in</a>";
+        }
+        echo '</div>';
+    echo '<div class="pure-u-1-2 pure-u-md-1-4 head-button">';
+        if(Tutor::verify($_SERVER['uid'])) {
+        echo '<a class="pure-button" href="tutor-admin.php">Manage Tutors</a>';
+        }
+        echo '</div>';
+    }
+    ?>
 </div>
-<?php
-spl_autoload_register(function ($class) {
-    @require_once($class . '.php');
-});
-if($_SERVER['uid'] == null){
-    $_SERVER['uid'] = "tst1234";
-    $_SERVER['givenName'] = "Bobby";
-    $_SERVER['sn'] = "Haskell";
-    $_SERVER['ritEduAffiliation'] = "UGAFF;UGAFFSTD;StudentWorker;STDAFFIL;Student;ResidentMain";
-}
-?>

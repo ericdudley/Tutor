@@ -6,7 +6,7 @@
 
     <div class="pure-u-sm-1-5"></div>
     <div class="pure-u-1 pure-u-sm-3-5">
-        <form action="create-tutor.php" method="post">
+        <form id="create-tutor-form" class="pure-form-stacked" action="create-tutor.php" method="post">
             <input type="text" placeholder="abc1234, xyz6789..." name="username" required>
             <input type="text" placeholder="Bob Haskell, Jon Pope..." name="name" required>
             <input type="submit" value="Add Tutor">

@@ -34,6 +34,23 @@ ul{
     width: 100%;
     margin-bottom: 20px;
     color: white;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+#logo-wrapper h1
+{
+    margin: auto;
+}
+
+.head-button
+{
+    display: flex;
+}
+
+.head-button a
+{
+    margin: auto;
 }
 
 .delete-question
@@ -47,4 +64,9 @@ ul{
 .back-button
 {
     margin-bottom: 20px;
+}
+
+#create-tutor-form input
+{
+    margin: 8px auto;
 }

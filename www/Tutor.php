@@ -121,4 +121,18 @@ WHERE strftime('%s','now') - last_active < 3600 AND username LIKE :username LIMI
         }
         return false;
     }
+
+    public static function delete($username)
+    {
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $tutors = array();
+            $sql = "DELETE FROM Tutor WHERE username LIKE :username;";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->execute();
+            return true;
+        }
+        return false;
+    }
 }

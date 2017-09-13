@@ -5,7 +5,7 @@
     </div>
     <div class="pure-u-sm-2-5"></div>
     <div class="pure-u-1 pure-u-sm-1-5">
-        <form class="pure-form pure-form-stacked" action="submit-question.php" method="post">
+        <form id="question-form" class="pure-form pure-form-stacked" action="submit-question.php" method="post">
             <fieldset>
                 <legend>Submit a help request.</legend>
 

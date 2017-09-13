@@ -32,6 +32,13 @@
         <h3>Help Queue</h3>
         <?php include "question-list.php"; ?>
     </div>
+    <div class="pure-u-1">
+        <?php
+            if(Tutor::verify($_SERVER['uid'])) {
+                echo '<a class="pure-button" href="tutor-admin.php">Manage Tutors</a>';
+            }
+        ?>
+    </div>
 </div>
 
 <script

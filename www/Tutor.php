@@ -1,42 +1,39 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: eric
+ * Tutor: eric
  * Date: 9/11/17
  * Time: 7:36 PM
  */
 
-class User
+class Tutor
 {
     public $username;
     public $name;
-    public $isTutor;
 
     /**
-     * User constructor.
+     * Tutor constructor.
      * @param $username
      * @param $name
      * @param $isTutor
      */
-    public function __construct($username, $name, $isTutor)
+    public function __construct($username, $name)
     {
         $this->username = $username;
         $this->name = $name;
-        $this->isTutor = $isTutor;
     }
 
-    public static function create($username, $name, $isTutor){
+    public static function create($username, $name){
         $db = SQLiteConnection::connect();
         if ($db != null) {
-            $sql = "INSERT INTO User(username, name, isTutor) 
-VALUES (:username, :name, :isTutor);";
+            $sql = "INSERT INTO Tutor(username, name) 
+VALUES (:username, :name);";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-            $stmt->bindParam(':isTutor', $isTutor, PDO::PARAM_STR);
             $stmt->execute();
 
-            return new User($username, $name, $isTutor);
+            return new Tutor($username, $name);
         }
         return null;
     }

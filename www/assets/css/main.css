@@ -1,7 +1,6 @@
 body, html
 {
     margin: 0;
-    margin-top: 10px;
     width: 100%;
     height: 100%;
     position: relative;
@@ -21,4 +20,18 @@ ul{
 .pure-g
 {
     text-align: center;
+}
+
+form
+{
+    padding: 15px;
+    text-align: left;
+}
+
+#logo-wrapper
+{
+    background: #0062A0;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
 }

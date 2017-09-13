@@ -13,7 +13,8 @@ class Config {
 //        "DROP TABLE IF EXISTS Tutor;",
         "CREATE TABLE IF NOT EXISTS Tutor(
           username VARCHAR(20) PRIMARY KEY,
-          name VARCHAR(40)
+          name VARCHAR(40),
+          last_active INTEGER
         );",
         "CREATE TABLE IF NOT EXISTS Question(
           id INTEGER PRIMARY KEY,

@@ -5,6 +5,6 @@ if($_GET['id'] != null) {
     include "redirect.php";
 } else {
     echo "<p>No question id specified!</p>
-        <a class=\"pure-button\" href=\"index.php\">Back</a>
+        <a class=\"pure-button\" href=\".\">Back</a>
 ";
 }

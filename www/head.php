@@ -34,8 +34,9 @@ spl_autoload_register(function ($class) {
     @require_once($class . '.php');
 });
 if($_SERVER['uid'] == null){
-    $_SERVER['uid'] = "erd5693";
-    $_SERVER['givenName'] = "Eric";
-    $_SERVER['sn'] = "Dudley";
+    $_SERVER['uid'] = "tst1234";
+    $_SERVER['givenName'] = "Bobby";
+    $_SERVER['sn'] = "Haskell";
+    $_SERVER['ritEduAffiliation'] = "UGAFF;UGAFFSTD;StudentWorker;STDAFFIL;Student;ResidentMain";
 }
 ?>

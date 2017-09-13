@@ -56,11 +56,27 @@ VALUES (:username, :name, :clss, :assn, :qtext);";
         if ($db != null) {
             $sql = "DELETE FROM Question WHERE id=:id;";
             $stmt = $db->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
             return true;
         }
         return false;
+    }
+
+
+    public static function get($id)
+    {
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $sql = 'SELECT * FROM Question WHERE id=:id LIMIT 1';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($row == null){return null;}
+            return new Question($id, $row['username'], $row['name'], $row['clss'], $row['assn'], $row['qtext']);
+        }
+        return null;
     }
 
     public static function getAll()

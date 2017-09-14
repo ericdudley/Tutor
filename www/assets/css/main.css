@@ -74,7 +74,7 @@ ul li {
 .card {
     background: #fff;
     border-radius: 3px;
-    min-height: 200px;
+    min-height: 50px;
     min-width: 200px;
     margin: 1rem 0;
     position: relative;
@@ -96,4 +96,15 @@ ul li {
 {
     color: red;
     margin-left: 5px;
+}
+
+.fa-refresh
+{
+    color: #0078e7;
+}
+
+@media screen and (min-width: 768px){
+    .card {
+        min-height: 100px;
+    }
 }

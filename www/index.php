@@ -1,6 +1,5 @@
 <?php include "head.php"; ?>
 <body>
-
 <div class="pure-g">
     <?php
     $db = SQLiteConnection::connect();
@@ -18,7 +17,7 @@
     <div class="pure-u-md-1-24"></div>
     <div id="help-queue" class="pure-u-1 pure-u-md-1-4 card">
         <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
-        <h3>Help Queue</h3>
+        <h3>Help Queue <a href="."><i class="fa fa-refresh"></i></a></h3>
         <?php include "question-list.php"; ?>
     </div>
 </div>

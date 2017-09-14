@@ -1,10 +1,8 @@
 <?php include "head.php"; ?>
 <div class="pure-g">
-    <div class="pure-u-1">
+    <div class="pure-u-sm-1-4"></div>
+    <div class="pure-u-1 pure-u-sm-1-2 card">
         <a class="pure-button" href="index.php">Back</a>
-    </div>
-    <div class="pure-u-sm-2-5"></div>
-    <div class="pure-u-1 pure-u-sm-1-5">
         <form id="question-form" class="pure-form pure-form-stacked" action="submit-question.php" method="post">
             <fieldset>
                 <legend>Submit a help request.</legend>

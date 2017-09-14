@@ -38,20 +38,18 @@ if($_SERVER['uid'] == null){
             <img src="assets/img/cs_logo.png" id="logo">
         </a>
     </div>
-    <h1 class="pure-u-1-2 pure-u-md-1-4">Tutoring Center</h1>
+    <h1 class="pure-u-1-2 pure-u-md-1-2">Tutoring Center</h1>
     <?php
     if(Tutor::verify($_SERVER['uid'])) {
-    echo '<div class="pure-u-1-2 pure-u-md-1-4 head-button">';
+    echo '<div class="pure-u-1 pure-u-md-1-4 head-button">';
         if (Tutor::isActive($_SERVER['uid'])) {
         echo "<a class='pure-button' href='clock-out.php?username={$_SERVER['uid']}'>Clock out</a>";
         }
         else{
         echo "<a class='pure-button' href='clock-in.php?username={$_SERVER['uid']}'>Clock in</a>";
         }
-        echo '</div>';
-    echo '<div class="pure-u-1-2 pure-u-md-1-4 head-button">';
         if(Tutor::verify($_SERVER['uid'])) {
-        echo '<a class="pure-button" href="tutor-admin.php">Manage Tutors</a>';
+            echo '<a class="pure-button" href="tutor-admin.php">Manage Tutors</a>';
         }
         echo '</div>';
     }

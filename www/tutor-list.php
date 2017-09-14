@@ -1,8 +1,8 @@
-<ul class="pure-menu-list">
+<ul>
     <?php
         foreach(Tutor::getActive() as $idx=> $t){
-            echo "<li class='pure-menu-item'>
-<a class='pure-menu-link' href='#'>{$t->name}</a></li>";
+            echo "<li>
+<ahref='#'>{$t->name}</a></li>";
         }
     ?>
 </ul>

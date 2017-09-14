@@ -10,12 +10,13 @@
         }
     }
     ?>
-    <div class="pure-u-md-1-4"></div>
-    <div class="pure-u-1 pure-u-md-1-4">
+    <div class="pure-u-md-5-24"></div>
+    <div class="pure-u-1 pure-u-md-1-4 card">
         <h3>Active Tutors</h3>
         <?php include "tutor-list.php"; ?>
     </div>
-    <div class="pure-u-1 pure-u-md-1-4">
+    <div class="pure-u-md-1-24"></div>
+    <div id="help-queue" class="pure-u-1 pure-u-md-1-4 card">
         <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
         <h3>Help Queue</h3>
         <?php include "question-list.php"; ?>

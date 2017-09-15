@@ -1,4 +1,7 @@
-<?php include "head.php" ?>
+<?php
+include "head.php";
+include "tutors-only.php";
+?>
 <div class="content">
 <div class="pure-g">
     <div class="pure-u-md-4-24"></div>

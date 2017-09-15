@@ -1,5 +1,7 @@
 <?php
 include "head.php";
+include "tutors-only.php";
+Tutor::updateLastActive($_SERVER['uid']);
 if($_GET['username'] != null) {
     Tutor::delete($_GET['username']);
     echo '<script type="text/javascript">

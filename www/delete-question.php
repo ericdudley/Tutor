@@ -1,5 +1,7 @@
 <?php
 include "head.php";
+include "tutors-only.php";
+Tutor::updateLastActive($_SERVER['uid']);
 if($_GET['id'] != null) {
     Question::delete($_GET['id']);
     include "redirect.php";

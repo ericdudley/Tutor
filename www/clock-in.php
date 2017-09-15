@@ -1,5 +1,6 @@
 <?php
 include "head.php";
+include "tutors-only.php";
 if($_GET['username'] != null) {
     Tutor::updateLastActive($_GET['username']);
     include "redirect.php";

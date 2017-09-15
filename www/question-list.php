@@ -6,13 +6,20 @@
 <div id="question-list-container">
 <ul>
     <?php
-        foreach(Question::getAll() as $idx=>$q){
+    $questions = Question::getAll();
+    if(count($questions) == 0) {
+        echo "<p>There are no help requests.</p>";
+
+    }
+    else {
+        foreach ($questions as $idx => $q) {
             echo "<li>
-<a class='pure-button' href='question-detail.php?id={$q->id}'>{$idx} {$q->name}</a>".
+<a class='pure-button' href='question-detail.php?id={$q->id}'>{$idx} {$q->name}</a>" .
                 ((Tutor::verify($_SERVER['uid'])) ?
-                "<a class='pure-button delete-question' href='delete-question.php?id={$q->id}'>Delete</a>" : "") .
-"</li>";
+                    "<a class='pure-button delete-question' href='delete-question.php?id={$q->id}'>Delete</a>" : "") .
+                "</li>";
         }
+    }
     ?>
 </ul>
 </div>

@@ -40,7 +40,7 @@ if($_SERVER['uid'] == null){
             <img src="assets/img/cs_logo.png" id="logo">
         </a>
     </div>
-    <h1 class="pure-u-1-2 pure-u-md-1-2">Tutoring Center</h1>
+    <h1 class="pure-u-1-2 pure-u-md-1-2">Tutor</h1>
     <?php
     if(Tutor::verify($_SERVER['uid'])) {
     echo '<div class="pure-u-1 pure-u-md-1-4 head-button">';

@@ -10,7 +10,7 @@
         }
     }
 
-    echo '<div class="pure-u-md-1-4"></div>';
+    echo '<div class="pure-u-md-5-24"></div>';
     if (!file_exists('profile_pics/' . $_SERVER['uid'] . '.jpg')) {
         echo '<div class="pure-u-1 pure-u-md-1-2 card">
 <h2>You don\'t have a profile pic, upload one!</h2>
@@ -20,7 +20,7 @@
 </form>
 </div>';
     } else {
-        echo '<div class="pure-u-1 pure-u-md-1-2 card">
+        echo '<div class="pure-u-1 pure-u-md-14-24 card">
 <h2>Hello, ' . $_SERVER["givenName"] . '.</h2>
 <img class="profile_img" src="profile_pics/' . $_SERVER["uid"] . '.jpg">
 <form id="pic-form" class="pure-form" action="upload-profile-pic.php" method="post" enctype="multipart/form-data">
@@ -30,19 +30,20 @@
 
 </div>';
     }
-    echo '<div class="pure-u-md-1-4"></div>';
+    echo '
+<div class="pure-u-md-5-24"></div>
+<div class="pure-u-md-5-24"></div>';
     ?>
-    <div class="pure-u-1 pure-u-md-5-24 card">
+    <div class="pure-u-1 pure-u-md-6-24 card">
         <h3>Active Tutors</h3>
         <?php include "tutor-list.php"; ?>
     </div>
     <div class="pure-u-md-1-24"></div>
-    <div id="help-queue" class="pure-u-1 pure-u-md-1-4 card">
+    <div id="help-queue" class="pure-u-1 pure-u-md-7-24 card">
         <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
         <h3>Help Queue <a href="." id="refresh-icon"><i class="fa fa-refresh"></i></a></h3>
         <?php include "question-list.php"; ?>
     </div>
-    <div class="pure-u-md-1-4"></div>
 </div>
 
 <script
@@ -58,6 +59,10 @@
         var sneaky = new ScrollSneak(location.hostname)
         var refresh = document.getElementById('refresh-icon');
         refresh.onclick = sneaky.sneak;
+
+        $(".delete-question").each(function () {
+            $(this)[0].onclick = sneaky.sneak;
+        });
     });
 </script>
 </div>

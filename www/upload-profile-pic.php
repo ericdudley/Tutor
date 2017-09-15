@@ -21,6 +21,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+        chmod($target_file, 0644);
         include "redirect.php";
     } else {
         echo "Sorry, there was an error uploading your file.";

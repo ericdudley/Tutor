@@ -6,7 +6,7 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Check file size
-if ($_FILES["img"]["size"] > 500000) {
+if ($_FILES["img"]["size"] > 8000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }

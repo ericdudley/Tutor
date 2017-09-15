@@ -21,6 +21,10 @@
         echo '<div class="pure-u-1 card">
 <h2>Logged in as '.$_SERVER["uid"].'</h2>
 <img src="profile_pics/'.$_SERVER["uid"].'.jpg">
+<form class="pure-form" action="upload-profile-pic.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="img">
+    <input type="submit" name="submit" value="Change picture">
+</form>
 </div>';
     }
     ?>

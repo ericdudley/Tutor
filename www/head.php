@@ -30,6 +30,8 @@ if($_SERVER['uid'] == null){
           href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet"
           href="assets/css/main.css">
+    <link rel="stylesheet"
+          href="assets/css/footer-distributed.css">
 </head>
 <body>
 <div id="logo-wrapper" class="pure-g">

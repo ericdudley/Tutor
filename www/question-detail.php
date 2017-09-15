@@ -2,6 +2,7 @@
 include "head.php";
 
 echo '
+<div class="content">
 <div class="pure-g">
     <div class="pure-u-md-3-8"></div>
     <div class="pure-u-1 pure-u-md-1-4 card">
@@ -42,5 +43,7 @@ echo "
 </ul>";
 
 echo '    </div>
-</div>
+</div></div>';
+include 'footer.php';
+echo '
 </body>';

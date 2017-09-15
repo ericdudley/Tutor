@@ -1,5 +1,6 @@
 <?php include "head.php"; ?>
 <body>
+<div class="content">
 <div class="pure-g">
     <?php
     $db = SQLiteConnection::connect();
@@ -55,5 +56,7 @@
         }
     });
 </script>
+</div>
+<?php include 'footer.php'?>
 </body>
 </html>

@@ -107,10 +107,24 @@ ul li {
     .card {
         min-height: 100px;
     }
+
+    #pic-form
+    {
+        position: absolute;
+        left: 8px;
+        bottom: 10px;
+    }
 }
 
-img
+.profile_img
 {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+}
+
+#pic-form
+{
+    text-align: left;
 }

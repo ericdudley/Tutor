@@ -5,7 +5,7 @@ echo '
 <div class="pure-g">
     <div class="pure-u-md-3-8"></div>
     <div class="pure-u-1 pure-u-md-1-4 card">
-    <a class="pure-button" href=".">Back</a>
+    <a class="pure-button back-button" href=".">Back</a>
     ';
 $id = $_GET['id'];
 if ($id == null) {
@@ -21,7 +21,10 @@ if ($id == null) {
 if ($q->username != $_SERVER['uid']) {
     include "tutors-only.php";
 }
-echo "<h2>{$q->name}'s Question</h2>
+echo "
+<br/>
+<img class='profile_img' src='profile_pics/" . $q->username . ".jpg'>
+<h2>{$q->name}'s Question</h2>
 <ul>
     <li>
         <h3>Class</h3>

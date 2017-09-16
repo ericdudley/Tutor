@@ -62,7 +62,7 @@
                 document.getElementById("pic-form").submit();
             };
             var sneaky = new ScrollSneak(location.hostname)
-            setInterval(refresh_questions, 5000);
+            setInterval(refresh_questions, 8000);
             setInterval(refresh_tutors, 120000);
         });
 
@@ -72,9 +72,9 @@
                 url: 'question-list.php',
                 success: function (msg) {
                     $('#question-list-container').html(msg);
+                    $("#q-refresh").removeClass("fa-spin");
                 }
             });
-            $("#q-refresh").removeClass("fa-spin");
         }
 
         function refresh_tutors(){
@@ -83,10 +83,9 @@
                 url: 'tutor-list.php',
                 success: function (msg) {
                     $('#tutor-list-container').html(msg);
+                    $("#t-refresh").removeClass("fa-spin");
                 }
             });
-            $("#t-refresh").removeClass("fa-spin");
-
         }
     </script>
 </div>

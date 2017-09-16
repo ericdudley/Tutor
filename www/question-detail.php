@@ -3,11 +3,7 @@ include "head.php";
 
 echo '
 <div class="content">
-<div class="pure-g">
-    <div class="pure-u-md-3-8"></div>
-    <div class="pure-u-1 pure-u-md-1-4 card">
-    <a class="pure-button back-button" href=".">Back</a>
-    ';
+';
 $id = $_GET['id'];
 if ($id == null) {
     echo "<p>No question id specified!</p>";
@@ -22,9 +18,15 @@ if ($id == null) {
 if ($q->username != $_SERVER['uid']) {
     include "tutors-only.php";
 }
+$img_path = file_exists("profile_pics/" . $q->username . ".jpg") ?
+    "profile_pics/" . $q->username . ".jpg" : "profile_pics/default.jpg";
 echo "
+<div class=\"pure-g\">
+    <div class=\"pure-u-md-3-8\"></div>
+    <div class=\"pure-u-1 pure-u-md-1-4 card\">
+    <a class=\"pure-button back-button\" href=\".\">Back</a>
 <br/>
-<img class='profile_img' src='profile_pics/" . $q->username . ".jpg'>
+<img class='profile_img' src='".$img_path."'>
 <h2>{$q->name}'s Question</h2>
 <ul>
     <li>
@@ -38,9 +40,10 @@ echo "
         </li>
         <li>
         <h3>Question</h3>
-        <p>{$q->qtext}</p>
+        <p class='question-text'>{$q->qtext}</p>
     </li>
-</ul>";
+</ul>
+<a class='pure-button delete-question' href='delete-question.php?id={$q->id}'>Delete</a>";
 
 echo '    </div>
 </div></div>';

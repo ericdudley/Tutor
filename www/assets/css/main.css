@@ -21,7 +21,12 @@ body, html
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     /* Set your content font stack here: */
-    font-family: "Zig", "Roboto", Georgia, Times, "Times New Roman", serif;
+    font-family: "Roboto", Georgia, Times, "Times New Roman", serif;
+}
+
+h1, h2, h3
+{
+    font-family: "Zig", "Roboto", Georgia, Times, "Times New Roman", serif !important;
 }
 
 ul, ol {
@@ -147,4 +152,14 @@ ul li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+#profile-pic-msg
+{
+    margin-bottom: 80px;
+}
+
+p
+{
+    word-break: break-all;
 }

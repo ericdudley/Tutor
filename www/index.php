@@ -62,8 +62,8 @@
                 document.getElementById("pic-form").submit();
             };
             var sneaky = new ScrollSneak(location.hostname)
-            setInterval(refresh_questions, 8000);
-            setInterval(refresh_tutors, 120000);
+            setInterval(refresh_questions, 90000);
+            setInterval(refresh_tutors, 150000);
         });
 
         function refresh_questions() {

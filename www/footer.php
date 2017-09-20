@@ -20,7 +20,7 @@
             ?>
         </p>
 
-        <p>Created by <a class="pure-button" href="http://ericdudley.com" target="_blank">Eric Dudley</a> &copy; 2017
+        <p>Created by <a class="pure-button" href="http://ericdudley.com" target="_blank">Eric Dudley</a> 2017
         </p>
     </div>
 

@@ -3,7 +3,7 @@ include "head.php";
 include "tutors-only.php";
 Tutor::updateLastActive($_SERVER['uid']);
 if($_GET['id'] != null) {
-    Question::delete($_GET['id']);
+    Question::delete($_GET['id'], $_SERVER['uid']);
     include "redirect.php";
 } else {
     echo "<p>No question id specified!</p>

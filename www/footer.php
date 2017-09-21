@@ -12,6 +12,8 @@
             <a href="index.php">View Dashboard</a>
             ·
             <a href="question-form.php">Request Help</a>
+            .
+            <a href="stats.php">View Stats</a>
             <?php
             if (Tutor::verify($_SERVER['uid'])) {
                 echo '·

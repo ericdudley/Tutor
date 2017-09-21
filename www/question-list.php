@@ -4,7 +4,7 @@
 ?>
 <ul>
     <?php
-    $questions = Question::getAll();
+    $questions = Question::getAllActive();
     if(count($questions) == 0) {
         echo "<p>There are no help requests.</p>";
 

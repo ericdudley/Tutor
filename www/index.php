@@ -3,12 +3,6 @@
 <div class="content">
     <div class="pure-g">
         <?php
-        $db = SQLiteConnection::connect();
-        if ($db != null) {
-            foreach (Config::CREATE_TABLE_STRINGS as $str) {
-                $db->exec($str);
-            }
-        }
 
         echo '<div class="pure-u-md-5-24"></div>';
         if (!file_exists('profile_pics/' . $_SERVER['uid'] . '.jpg')) {
@@ -49,6 +43,7 @@
                 <?php include "question-list.php"; ?>
             </div>
         </div>
+        <div class="pure-u-md-5-24"></div>
     </div>
 
     <script

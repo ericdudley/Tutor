@@ -29,6 +29,7 @@ echo "
 <img class='profile_img' src='".$img_path."'>
 <h2>{$q->name}'s Question</h2>
 <ul>
+    <p>Asked at ".date("H:i", $q->created_time)." on ".date('Y-m-d',$q->created_time)."</p>
     <li>
         <h3>Class</h3>
         <p>{$q->clss}</p>
@@ -37,14 +38,18 @@ echo "
         <h3>Assignment</h3>
         <p>{$q->assn}</p>
     </li>
-        </li>
-        <li>
+    <li>
         <h3>Question</h3>
         <p class='question-text'>{$q->qtext}</p>
     </li>
 </ul>
+";
+if(Question::isActive($q->id)){
+    echo "
 <a class='pure-button delete-question' href='delete-question.php?id={$q->id}'>Delete</a>";
-
+} else{
+    echo "<p><b>This question has been deleted.</b></p>";
+}
 echo '    </div>
 </div></div>';
 include 'footer.php';

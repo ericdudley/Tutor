@@ -9,8 +9,8 @@
 class Config {
     const PATH_TO_SQLITE_FILE = '../main.sqlite3';
     const CREATE_TABLE_STRINGS = [
-//        "DROP TABLE IF EXISTS Question;",
-//        "DROP TABLE IF EXISTS Tutor;",
+        "DROP TABLE IF EXISTS Question;",
+        "DROP TABLE IF EXISTS Tutor;",
         "CREATE TABLE IF NOT EXISTS Tutor(
           username VARCHAR(20) PRIMARY KEY,
           name VARCHAR(40),
@@ -23,7 +23,9 @@ class Config {
           clss VARCHAR(50),
           assn VARCHAR(50),
           qtext VARCHAR(256),
-          FOREIGN KEY (username) REFERENCES Tutor(username)
+          created_time INTEGER,
+          deleted_time INTEGER,
+          deleted_by VARCHAR(20)
           );"
     ];
 

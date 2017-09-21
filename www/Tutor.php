@@ -114,7 +114,8 @@ WHERE strftime('%s','now') - last_active < 3600 AND username LIKE :username LIMI
                 $time = 0;
                 $stmt->bindParam(':time', $time, PDO::PARAM_INT);
             }else{
-                $stmt->bindParam(':time', time(), PDO::PARAM_INT);
+                $time = time();
+                $stmt->bindParam(':time', $time, PDO::PARAM_INT);
             }
             $stmt->execute();
             return true;

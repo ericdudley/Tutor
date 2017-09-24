@@ -28,20 +28,27 @@
 <div class="pure-u-md-5-24"></div>
 <div class="pure-u-md-5-24"></div>';
         ?>
-        <div class="pure-u-1 pure-u-md-6-24 card">
+        <div id="tutor-list-card" class="pure-u-1 pure-u-md-7-24 card">
             <h3>Active Tutors <button onclick="refresh_tutors()"><i id="t-refresh" class="fa fa-refresh"></i></button></h3>
             </h3>
             <div id="tutor-list-container">
                 <?php include "tutor-list.php"; ?>
             </div>
         </div>
-        <div class="pure-u-md-1-24"></div>
-        <div id="help-queue" class="pure-u-1 pure-u-md-7-24 card">
+<!--        <div class="pure-u-md-2-24"></div>-->
+        <div id="help-queue-card" class="pure-u-1 pure-u-md-7-24 card">
             <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
             <h3>Help Queue <button onclick="refresh_questions()"><i id="q-refresh" class="fa fa-refresh"></i></button></h3>
             <div id="question-list-container">
                 <?php include "question-list.php"; ?>
             </div>
+        </div>
+        <div class="pure-u-md-5-24"></div>
+        <div class="pure-u-md-5-24"></div>
+        <div class="pure-u-1 pure-u-md-14-24 card" id="links-bar">
+            <a href="https://www.cs.rit.edu/csdocs/pictures/tutoringschedule2165.pdf" target="_blank"><i class="fa fa-5x fa-calendar"></i></a>
+            <a href="https://github.com/ericdudley/Tutor/issues" target="_blank"><i class="fa fa-5x fa-phone"></i></a>
+            <a href="faq.php"><i class="fa fa-5x fa-question-circle"></i></a>
         </div>
         <div class="pure-u-md-5-24"></div>
     </div>
@@ -56,7 +63,6 @@
             document.getElementById("pic-select-input").onchange = function () {
                 document.getElementById("pic-form").submit();
             };
-            var sneaky = new ScrollSneak(location.hostname)
             setInterval(refresh_questions, 90000);
             setInterval(refresh_tutors, 150000);
         });

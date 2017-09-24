@@ -1,6 +1,7 @@
 <?php include "head.php"; ?>
 <div class="content">
     <div class="pure-g">
+        <div class="pure-u-1 spacer"></div>
         <div class="pure-u-sm-1-4"></div>
         <div class="pure-u-1 pure-u-sm-1-2 card">
             <a class="pure-button" href="index.php">Back</a>

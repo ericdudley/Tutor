@@ -118,6 +118,12 @@ ul li {
     border-left: dashed #fafafa 3px;
 }
 
+#help-queue-card ul, #tutor-list-card ul
+{
+    max-height: 400px;
+    overflow: auto;
+}
+
 .delete-question
 {
     color: red;
@@ -200,6 +206,28 @@ p
 
 .spacer{
     height: 30px;
+}
+
+.question-elem
+{
+    position: relative;
+    padding-left: 20px;
+    min-width: 150px;
+    border-radius: 0 50px 50px 0;
+}
+
+.question-elem-num
+{
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translate(0, -50%);
+    background-color: #777777;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
 }
 
 @media screen and (min-width: 768px){

@@ -40,13 +40,28 @@ VALUES (:username, :name);";
         return null;
     }
 
+    public static function update($username, $name){
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $sql = "UPDATE Tutor SET name=:name 
+WHERE username=:username;";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->execute();
+
+            return new Tutor($username, $name, 0);
+        }
+        return null;
+    }
+
     public static function verify($username){
         if(strpos($_SERVER['ritEduAffiliation'], 'Employee') !== false){
             return true;
         }
         $db = SQLiteConnection::connect();
         if ($db != null) {
-            $sql = 'SELECT * FROM Tutor WHERE username LIKE :username LIMIT 1';
+            $sql = 'SELECT * FROM Tutor WHERE username=:username LIMIT 1';
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->execute();
@@ -55,6 +70,21 @@ VALUES (:username, :name);";
 
         }
         return false;
+    }
+
+    public static function get($username)
+    {
+        $db = SQLiteConnection::connect();
+        if ($db != null) {
+            $sql = 'SELECT * FROM Tutor WHERE username=:username LIMIT 1';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($row == null){return null;}
+            return new Tutor($row['username'], $row['name'], $row['last_active']);
+        }
+        return null;
     }
 
     public static function getAll()

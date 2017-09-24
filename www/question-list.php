@@ -12,7 +12,8 @@
     else {
         foreach ($questions as $idx => $q) {
             echo "<li>
-<a class='pure-button' href='question-detail.php?id={$q->id}'>{$idx} {$q->name}</a></li>";
+<a class='pure-button question-elem' href='question-detail.php?id={$q->id}'>
+<span class='question-elem-num'>{$idx}</span> {$q->name}</a></li>";
         }
     }
     ?>

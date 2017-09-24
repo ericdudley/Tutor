@@ -91,7 +91,7 @@
                             <input id="assignment" type="text" placeholder="Hw 1, Lab 1..." name="assn" required>
 
                             <label for="question">Question</label>
-                            <input id="question" type="text" placeholder="Question" name="qtext" required>
+                            <input id="question" type="textarea" placeholder="Question" name="qtext" required>
                         </fieldset>
                     </form>
                 </div>

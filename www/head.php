@@ -32,6 +32,11 @@ if($_SERVER['uid'] == null){
           href="assets/css/main.css">
     <link rel="stylesheet"
           href="assets/css/footer-distributed.css">
+    <link rel="stylesheet"
+          href="assets/css/bootstrap.min.css">
+    <script>
+        var username = "<?php echo $_SERVER['uid'];?>";
+    </script>
 </head>
 <body>
 <div id="logo-wrapper" class="pure-g">

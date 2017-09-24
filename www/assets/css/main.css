@@ -181,15 +181,6 @@ p
 #links-bar a:hover
 {
     color: #129FEA;
-    animation-name: wiggle;
-    animation-duration: 0.2s;
-    transform: rotate(0deg) scale(1.3);
-}
-
-@keyframes wiggle {
-    0% {transform: rotate(0deg) scale(1);}
-    80% {transform: rotate(10deg) scale(1.4);}
-    100% {transform: rotate(0deg) scale(1.3);}
 }
 
 #prefooter {
@@ -208,8 +199,7 @@ p
     height: 30px;
 }
 
-.question-elem
-{
+.question-elem {
     position: relative;
     padding-left: 20px;
     min-width: 150px;
@@ -218,6 +208,7 @@ p
 
 .question-elem-num
 {
+    color: #fff;
     font-size: 1.5em;
     position: absolute;
     top: 50%;
@@ -228,6 +219,27 @@ p
     width: 30px;
     height: 30px;
     line-height: 30px;
+}
+
+#help-form-modal .modal-footer
+{
+    text-align: left;
+}
+
+#help-form-button
+{
+    margin-right: 8px;
+}
+
+.own-question
+{
+    color: #0078e7;
+    font-weight: bold;
+}
+
+.question-elem:hover
+{
+    text-decoration: none;
 }
 
 @media screen and (min-width: 768px){
@@ -254,6 +266,21 @@ p
         border-bottom: dashed #fafafa 3px;
     }
 
+    #position-indicator
+    {
+        border-top: dashed #fafafa 3px;
+        padding: 5px;
+        min-height: 50px;
+        height: auto;
+        display: flex;
+    }
+
+    #position-indicator h3
+    {
+        margin: auto;
+    }
+
+
     #help-queue-card
     {
         border-left: dashed #fafafa 3px;
@@ -261,5 +288,47 @@ p
 
     #prefooter{
         display: flex;
+    }
+
+    #help-form-modal .modal-dialog
+    {
+        width: 400px;
+    }
+
+    .question-elem
+    {
+        transition: transform 0.2s;
+        transition-timing-function: cubic-bezier(1,.57,.57,1.53);
+    }
+
+    .question-elem:hover
+    {
+        transform: scale(1.1);
+    }
+
+    #links-bar a:hover
+    {
+        animation-name: wiggle;
+        animation-duration: 0.2s;
+        transform: rotate(0deg) scale(1.3);
+    }
+
+    @keyframes wiggle {
+        0% {transform: rotate(0deg) scale(1);}
+        80% {transform: rotate(10deg) scale(1.4);}
+        100% {transform: rotate(0deg) scale(1.3);}
+    }
+
+    #pic-form
+    {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 1s;
+    }
+
+    #welcome-header:hover #pic-form
+    {
+        visibility: visible;
+        opacity: 1;
     }
 }

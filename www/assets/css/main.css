@@ -242,7 +242,32 @@ p
     text-decoration: none;
 }
 
+#help-form-modal
+{
+    display: none;
+}
+
+#help-modal-button
+{
+    display: none;
+}
+
+#help-link-button
+{
+    display: inline-block;
+}
+
 @media screen and (min-width: 768px){
+    #help-modal-button
+    {
+        display: inline-block;
+    }
+
+    #help-link-button
+    {
+        display: none;
+    }
+
     .card {
         min-height: 100px;
         margin: 0 0;

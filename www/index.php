@@ -41,10 +41,10 @@
 <!--        <div class="pure-u-md-2-24"></div>-->
         <div id="help-queue-card" class="pure-u-1 pure-u-md-7-24 card">
             <!-- Button trigger modal -->
-            <button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#help-form-modal">
+            <button id="help-modal-button" type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#help-form-modal">
                 Ask for Help
             </button>
-<!--            <a class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>-->
+            <a id="help-link-button" class="pure-button pure-button-primary" href="question-form.php">Ask for Help</a>
             <h3>Help Queue <button onclick="refresh_questions()"><i id="q-refresh" class="fa fa-refresh"></i></button></h3>
             <div id="question-list-container">
                 <?php include "question-list.php"; ?>

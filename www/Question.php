@@ -153,7 +153,7 @@ WHERE strftime('%s','now') - created_time < 7200 AND deleted_time is NULL AND id
     {
         $db = SQLiteConnection::connect();
         if ($db != null) {
-            $sql = "SELECT avg(deleted_time - created_time) as avgwait FROM Question WHERE deleted_time is not NULL ;";
+            $sql = "SELECT avg(deleted_time - created_time) as avgwait FROM Question WHERE deleted_time is not NULL AND (deleted_time - created_time) <= 7200  ;";
             $stmt = $db->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);

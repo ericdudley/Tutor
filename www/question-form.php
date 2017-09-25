@@ -26,7 +26,7 @@
                     <input id="assignment" type="text" placeholder="Hw 1, Lab 1..." name="assn" required>
 
                     <label for="question">Question</label>
-                    <input id="question" type="textarea" placeholder="Question" name="qtext" required>
+                    <textarea id="question" placeholder="Question" name="qtext" required></textarea>
 
                     <input class="pure-button pure-button-primary" type="submit" value="Submit">
                 </fieldset>

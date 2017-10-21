@@ -113,10 +113,16 @@
                 document.getElementById("help-form").submit();
             };
 
-            setInterval(refresh_questions, 90000);
+            setInterval(refresh_questions, 30000);
             setInterval(refresh_tutors, 150000);
 
             update_position_indicator();
+
+
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+                notify();
+            }
         });
 
         function refresh_questions() {
@@ -143,7 +149,9 @@
         }
 
         function update_position_indicator(){
+            var $positionnum = $('#position-num');
             var position = Infinity;
+            var prev_pos = $positionnum.html();
             $("#question-ul li").each(function () {
                 $t = $(this);
                 if($t.data('username') === username && $t.data('position') < position){
@@ -151,10 +159,37 @@
                 }
             });
             if(position !== Infinity){
-                $('#position-num').html(position);
+                $positionnum.html(position);
             } else {
-                $('#position-num').html('not');
+                $positionnum.html('not');
             }
+
+            if(prev_pos !== "not" && parseInt(prev_pos) > parseInt($positionnum.html())){
+                notify($positionnum.html());
+            }
+        }
+
+        function notify(pos) {
+            if (Notification.permission !== "granted")
+                Notification.requestPermission();
+            else {
+                var notification = new Notification("Tutor Notification", {
+                    icon: 'favicon.ico',
+                    body: 'You will be notified when you move up in the help queue!'
+                });
+                if(pos) {
+                    var notification = new Notification("You've moved up!", {
+                        icon: 'favicon.ico',
+                        body: "You are now at position " + pos + " in the help queue!",
+                    });
+                }
+
+                notification.onclick = function () {
+                    window.open(".");
+                };
+
+            }
+
         }
     </script>
 </div>
